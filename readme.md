@@ -14,4 +14,3 @@ AMXMODX 1.8.2 compatible plugin
 ========CREDITS========
 Weapon menu: RsN
 VIP SYSTEM: Balazs_V , aarpi
-
