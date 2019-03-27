@@ -1,5 +1,5 @@
 /*
-   Ford�totta: BBk
+   Keszitette: Balázs V.
 */
 
 #define DAMAGE_RECIEVED
@@ -12,7 +12,7 @@
 #define ADMIN_VIP ADMIN_LEVEL_H
 
 /*
-	Fegyvermen� by RsN
+	Fegyvermenü by RsN
 */
 
 const NETOLTS = ((1<<CSW_HEGRENADE)|(1<<CSW_SMOKEGRENADE)|(1<<CSW_FLASHBANG)|(1<<CSW_KNIFE)|(1<<CSW_C4))
@@ -166,7 +166,7 @@ if(get_user_flags(id) & ADMIN_KICK)
 }
 else
 {
-print_color(id, "!g=[MHC]= !yEzt a funkciót csak a !tPrémium VIP !yjoggal rendelkező játékosok használhatják. Bővebb infó !g/vipvasarlas !yparancs.");
+print_color(id, "!g=[MHC]= !yEzt a funkciÃ³t csak a !tPrÃ©mium VIP !yjoggal rendelkezÅ‘ jÃ¡tÃ©kosok hasznÃ¡lhatjÃ¡k. BÅ‘vebb infÃ³ !g/vipvasarlas !yparancs.");
 }
 }
 public add_prefix(id)
@@ -181,7 +181,7 @@ public add_prefix(id)
 	{
 		g_prefix[id] = ""
 		client_cmd(id, "messagemode PREFIX")
-		print_color(id, "A prefixed nem lehet rövidebb 4, illetve hosszabb 12 karakternél!")
+		print_color(id, "A prefixed nem lehet rÃ¶videbb 4, illetve hosszabb 12 karakternÃ©l!")
 		return PLUGIN_HANDLED;
 	}	
 	g_vanprefix[id] = true
@@ -318,10 +318,10 @@ public menuujra(id)
 	else
 	{
 		if(hasznalt = 1 && get_user_flags(id) & ADMIN_LEVEL_H) {
-		print_color(id, "!g=[MHC]= !yEgy körben csak !tegyszer !ytudod aktiválni a Fegyvermenüt!")
+		print_color(id, "!g=[MHC]= !yEgy kÃ¶rben csak !tegyszer !ytudod aktivÃ¡lni a FegyvermenÃ¼t!")
 		}
 		else {
-		print_color(id, "!g=[MHC]= !yEzt a funkciót csak a !tPrémium VIP !yjoggal rendelkező játékosok használhatják. Bővebb infó !g/vipvasarlas !yparancs.");
+		print_color(id, "!g=[MHC]= !yEzt a funkciÃ³t csak a !tPrÃ©mium VIP !yjoggal rendelkezÅ‘ jÃ¡tÃ©kosok hasznÃ¡lhatjÃ¡k. BÅ‘vebb infÃ³ !g/vipvasarlas !yparancs.");
 	}
 	}
 }
@@ -370,7 +370,7 @@ public mh_MyMenu(id, menu, item)
 public Pressedrod(id, key) {
 	/* Menu:
 	* VIP Menu
-	* 1. Fegvyermen�
+	* 1. Fegvyermenü
 	* 2. Egyedi Prefix
 	* 0. Exit
 	*/
@@ -392,7 +392,7 @@ public HandleCmd(id){
       return PLUGIN_CONTINUE
 	if(get_user_flags(id) & ADMIN_LEVEL_H) 
 		return PLUGIN_CONTINUE
-	client_print(id, print_center, "!g=[MHC]= !yEzt a funkciót csak a !tPrémium VIP !yjoggal rendelkező játékosok használhatják. Bővebb infó !g/vipvasarlas !yparancs.")
+	client_print(id, print_center, "!g=[MHC]= !yEzt a funkciÃ³t csak a !tPrÃ©mium VIP !yjoggal rendelkezÅ‘ jÃ¡tÃ©kosok hasznÃ¡lhatjÃ¡k. BÅ‘vebb infÃ³ !g/vipvasarlas !yparancs.")
 	return PLUGIN_HANDLED
 }
 
@@ -479,7 +479,7 @@ if(user_has_weapon(id, CSW_C4))
 	give_item(id, "weapon_knife")
 	give_item(id, "weapon_c4")
 	cs_set_user_plant(id,1,1)
-	new menu = menu_create("\rFegyverMenü", "FegyverMenu_mh");
+	new menu = menu_create("\rFegyverMenÃ¼", "FegyverMenu_mh");
 	menu_additem(menu, "\yM4a1", "0", 0); // case 0
 	menu_additem(menu, "\yAk47", "1", 0); // case 1
 	menu_additem(menu, "\yAWP", "2", 0); // case 2
@@ -498,8 +498,8 @@ if(user_has_weapon(id, CSW_C4))
 	menu_additem(menu, "\yMac10", "15", 0); // case 15
 	menu_setprop(menu, MPROP_EXIT, MEXIT_ALL);
 	menu_setprop(menu, MPROP_BACKNAME, "Vissza");
-	menu_setprop(menu, MPROP_NEXTNAME, "Előre");
-	menu_setprop(menu, MPROP_EXITNAME, "Kilép");
+	menu_setprop(menu, MPROP_NEXTNAME, "ElÅ‘re");
+	menu_setprop(menu, MPROP_EXITNAME, "KilÃ©p");
 	menu_display(id, menu, 0);	
 }
 else if (userTeam == CS_TEAM_CT)
@@ -507,7 +507,7 @@ else if (userTeam == CS_TEAM_CT)
 	strip_user_weapons(id)
 	give_item(id, "weapon_knife")
 	ham_strip_weapon(id,"weapon_glock18")
-	new menu = menu_create("\rFegyverMenü", "FegyverMenu_mh");
+	new menu = menu_create("\rFegyverMenÃ¼", "FegyverMenu_mh");
 	menu_additem(menu, "\yM4a1", "0", 0); // case 0
 	menu_additem(menu, "\yAk47", "1", 0); // case 1
 	menu_additem(menu, "\yAWP", "2", 0); // case 2
@@ -526,8 +526,8 @@ else if (userTeam == CS_TEAM_CT)
 	menu_additem(menu, "\yMac10", "15", 0); // case 15
 	menu_setprop(menu, MPROP_EXIT, MEXIT_ALL);
 	menu_setprop(menu, MPROP_BACKNAME, "Vissza");
-	menu_setprop(menu, MPROP_NEXTNAME, "Előre");
-	menu_setprop(menu, MPROP_EXITNAME, "Kilép");
+	menu_setprop(menu, MPROP_NEXTNAME, "ElÅ‘re");
+	menu_setprop(menu, MPROP_EXITNAME, "KilÃ©p");
 	menu_display(id, menu, 0);	
 }
 else if (userTeam == CS_TEAM_T)
@@ -536,7 +536,7 @@ else if (userTeam == CS_TEAM_T)
 	ham_strip_weapon(id,"weapon_usp")
 	give_item(id, "weapon_knife")
 	give_item(id, "item_thighpack");
-	new menu = menu_create("\rFegyverMenü", "FegyverMenu_mh");
+	new menu = menu_create("\rFegyverMenÃ¼", "FegyverMenu_mh");
 	menu_additem(menu, "\yM4a1", "0", 0); // case 0
 	menu_additem(menu, "\yAk47", "1", 0); // case 1
 	menu_additem(menu, "\yAWP", "2", 0); // case 2
@@ -555,8 +555,8 @@ else if (userTeam == CS_TEAM_T)
 	menu_additem(menu, "\yMac10", "15", 0); // case 15
 	menu_setprop(menu, MPROP_EXIT, MEXIT_ALL);
 	menu_setprop(menu, MPROP_BACKNAME, "Vissza");
-	menu_setprop(menu, MPROP_NEXTNAME, "Előre");
-	menu_setprop(menu, MPROP_EXITNAME, "Kilép");
+	menu_setprop(menu, MPROP_NEXTNAME, "ElÅ‘re");
+	menu_setprop(menu, MPROP_EXITNAME, "KilÃ©p");
 	menu_display(id, menu, 0);	
 }
 }
@@ -753,7 +753,7 @@ return PLUGIN_HANDLED;
 }
 public PistolMenu(id)
 {
-new menu = menu_create("\rPisztolyMenü", "PistolMenu_mh");
+new menu = menu_create("\rPisztolyMenÃ¼", "PistolMenu_mh");
  
 menu_additem(menu, "\yDeagle", "", 0); // case 0
 menu_additem(menu, "\yUsp", "", 0); // case 1
@@ -764,8 +764,8 @@ menu_additem(menu, "\yElite", "", 0); // case 5
  
 menu_setprop(menu, MPROP_EXIT, MEXIT_ALL);
 menu_setprop(menu, MPROP_BACKNAME, "Vissza");
-menu_setprop(menu, MPROP_NEXTNAME, "Előre");
-menu_setprop(menu, MPROP_EXITNAME, "Kilép");
+menu_setprop(menu, MPROP_NEXTNAME, "ElÅ‘re");
+menu_setprop(menu, MPROP_EXITNAME, "KilÃ©p");
  
 menu_display(id, menu, 0);
  
@@ -918,24 +918,24 @@ stock print_color(const id, const input[], any:...)
         replace_all(msg, 190, "!g", "^4")
         replace_all(msg, 190, "!y", "^1")
         replace_all(msg, 190, "!t", "^3")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")
-        replace_all(msg, 190, "?", "�")       
+        replace_all(msg, 190, "?", "á")
+        replace_all(msg, 190, "?", "é")
+        replace_all(msg, 190, "?", "í")
+        replace_all(msg, 190, "?", "ó")
+        replace_all(msg, 190, "?", "ö")
+        replace_all(msg, 190, "?", "õ")
+        replace_all(msg, 190, "?", "ú")
+        replace_all(msg, 190, "?", "ü")
+        replace_all(msg, 190, "?", "û")
+        replace_all(msg, 190, "?", "Á")
+        replace_all(msg, 190, "?", "É")
+        replace_all(msg, 190, "?", "Í")
+        replace_all(msg, 190, "?", "Ó")
+        replace_all(msg, 190, "?", "Ö")
+        replace_all(msg, 190, "?", "Õ")
+        replace_all(msg, 190, "?", "Ú")
+        replace_all(msg, 190, "?", "Ü")
+        replace_all(msg, 190, "?", "Û")       
  
         if (id) players[0] = id; else get_players(players, count, "ch")
         {
